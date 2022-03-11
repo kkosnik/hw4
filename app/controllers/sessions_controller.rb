@@ -7,14 +7,14 @@ class SessionsController < ApplicationController
     if @user
       if BCrypt::Password.new(@user.password) == params["password"]
         session[:user_id] = @user.id
-        flash[:notice] = "Welcome."
-        redirect_to "/"
+        flash[:notice] = "Welcome, #{@user.username}."
+        redirect_to "/places"
       else
-        flash[:notice] = "Nope."
+        flash[:notice] = "Wrong username and/or password."
         redirect_to "/sessions/new"
       end
     else
-      flash[:notice] = "Nope."
+      flash[:notice] = "Wrong username and/or password."
       redirect_to "/sessions/new"
     end
   end
