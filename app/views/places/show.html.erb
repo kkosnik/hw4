@@ -1,6 +1,7 @@
-<h1><%= @place.name %></h1>
+<% if @current_user %>
 
-<h2>My Posts</h2>
+<h1>Posts from <%= @place.name %></h1>
+
 <div class="row">
   <% for post in @place.posts %>
     <div class="col-md-3 col-sm-6">
@@ -23,4 +24,10 @@
   <p>
     <a href="/places">Back to All Places</a>
   </p>
+
+<% else %>
+
+<p> Please <a href="/sessions/new">log in</a> to start your travel journey </p> </p>
+
+<% end %>
 </div>

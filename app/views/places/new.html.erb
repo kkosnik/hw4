@@ -1,3 +1,5 @@
+<% if @current_user %>
+
 <h1>New Place</h1>
 
 <%= form_with model: @place do |form| %>
@@ -9,4 +11,10 @@
   <p>
     <%= form.submit %>
   </p>
+<% end %>
+
+<% else %>
+
+<p> Please <a href="/sessions/new">log in</a> to start your travel journey </p> </p>
+
 <% end %>

@@ -1,3 +1,5 @@
+<% if @current_user %>
+
 <h1>New Post from <%= Place.all.where({id: request.query_parameters["place_id"]})[0].name%></h1>
 
 <%= form_with model: @post do |form| %>
@@ -18,5 +20,12 @@
   <p>
     <%= form.submit %>
   </p>
+  <p>
   <%= form.hidden_field "place_id" %>
+  </p>
 <% end %>
+
+<% else %>
+  <p> You must <a href="/sessions/new">log in</a> to view this page </p>
+<% end %>
+
