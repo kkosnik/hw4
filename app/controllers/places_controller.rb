@@ -1,7 +1,7 @@
 class PlacesController < ApplicationController
 
   def index
-    @places = Place.all
+    @places = Place.all # .where({ user_id: session[:user_id] })
   end
 
   def show
@@ -10,6 +10,7 @@ class PlacesController < ApplicationController
 
   def new
     @place = Place.new
+    @place.user_id = params["user_id"]
   end
 
   def create
