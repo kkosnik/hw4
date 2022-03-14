@@ -3,14 +3,17 @@
 <h1>New Place</h1>
 
 <%= form_with model: @place do |form| %>
-  <p>
-    <%= form.label "name" %>
-    <%= form.text_field "name" %>
-    <%= form.hidden_field "user_id" %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
+  <div class="mb-3">
+      <%= form.label "name" %>
+      <%= form.text_field "name" %>
+      <%= form.hidden_field "user_id" %>
+  </div>
+  <div>
+      <%= form.submit "Create Place", class: "btn btn-primary" %>
+  </div>
+  <div class="row my-2">
+    <a href="/places">Back to All Places</a>
+  </div>
 <% end %>
 
 <% else %>

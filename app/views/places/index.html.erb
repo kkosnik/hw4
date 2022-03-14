@@ -4,15 +4,13 @@
   </div>
 
 <h1>Places I've Visited</h1>
+<div class="col ml-2">
 <ul>
   <% for place in @places %>
     <li><a href="/places/<%= place.id %>"><%= place.name %></a></li>
   <% end %>
 </ul>
-
-<p>
-  <a href="/places/new">New place</a>
-</p>
+</div>
 
 <% else %>
 

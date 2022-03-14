@@ -1,6 +1,6 @@
 <% if @current_user %>
 
-  <div class="col-sm-3 mt-2 mb-2 text-left">
+  <div class="col-sm-3 my-2 text-left">
       <a href="/posts/new?place_id=<%= @place.id %>" class="btn btn-success">New Post</a>
   </div>
 
@@ -8,7 +8,9 @@
     <a href="/places">Back to All Places</a>
   </p>
 
-<h1>Posts from <%= @place.name %></h1>
+  <div class = "row my-2">
+    <h1>Posts from <%= @place.name %></h1>
+  </div>
 
 <div class="row">
   <% for post in @place.posts %>
