@@ -5,6 +5,7 @@
     <%= form.label "name" %>
     <%= form.text_field "name" %>
     <%= form.hidden_field "id" %>
+    <%= form.hidden_field :user_id, value: @current_user.id %>
   </p>
   <p>
     <%= form.submit %>

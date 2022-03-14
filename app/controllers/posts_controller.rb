@@ -1,4 +1,8 @@
 class PostsController < ApplicationController
+  
+  def index
+    @posts = Post.all.where({ user_id: session[:user_id] })
+  end
 
   def new
     @post = Post.new
