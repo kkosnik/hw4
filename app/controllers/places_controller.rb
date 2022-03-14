@@ -1,7 +1,7 @@
 class PlacesController < ApplicationController
 
   def index
-    @places = Place.all # .where({ user_id: session[:user_id] })
+    @places = Place.all.where({ user_id: session[:user_id] })
   end
 
   def show
